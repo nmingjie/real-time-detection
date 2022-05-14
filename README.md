@@ -3,7 +3,7 @@
 Download Dependencies (requirements.txt)
 
 # Emotion Detection Folder
- change the video capture file path 
+change the video capture file path  <br />
 py .\TestEmotionDetector.py
 
 
