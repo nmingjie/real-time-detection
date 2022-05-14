@@ -17,29 +17,31 @@ emotion_model.load_weights("model/emotion_model.h5")
 print("Loaded model from disk")
 
 # start the webcam feed
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
 
 # pass here your video path
 # you may download one from here : https://www.pexels.com/video/three-girls-laughing-5273028/
 
 #cap = cv2.VideoCapture("C:/Users/MingJie/Desktop/real-time-detection/Video/test1.mp4")
 
+#cap = cv2.VideoCapture("https://www.youtube.com/watch?v=w_Ma8oQLmSM&ab_channel=ABCNews")
 
 while True:
     # start the screen capture
-    # printscreen_pil =  ImageGrab.grab()
-    # printscreen_numpy =   np.array(printscreen_pil.getdata(),dtype='uint8')\
-    # .reshape((printscreen_pil.size[1],printscreen_pil.size[0],3)) 
-    # cap = cv2.imshow('window',printscreen_numpy)
-    # if cv2.waitKey(25) & 0xFF == ord('q'):
-    #     cv2.destroyAllWindows()
-    #     break
+    printscreen_pil =  ImageGrab.grab()
+    printscreen_numpy =   np.array(printscreen_pil.getdata(),dtype='uint8')\
+    .reshape((printscreen_pil.size[1],printscreen_pil.size[0],3)) 
+    frame = printscreen_numpy
+    #frame = cv2.imshow('window',printscreen_numpy)
+    if cv2.waitKey(25) & 0xFF == ord('q'):
+        cv2.destroyAllWindows()
+        break
 
     # Find haar cascade to draw bounding box around face
-    ret, frame = cap.read()
+    #ret, frame = cap.read()
     frame = cv2.resize(frame, (1280, 720))
-    if not ret:
-        break
+    # if not ret:
+    #     break
     face_detector = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
