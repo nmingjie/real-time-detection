@@ -1,9 +1,9 @@
 # real-time-detection
 
-# Download Dependencies (requirements.txt)
+Download Dependencies (requirements.txt)
 
 # Emotion Detection Folder
-// change the video capture file path 
+ change the video capture file path 
 py .\TestEmotionDetector.py
 
 
