@@ -9,3 +9,8 @@ py .\TestEmotionDetector.py
 
 # Smile Detection Folder
 py detect_smile.py -m model.h5 -c haarcascade_frontalface_default.xml
+
+
+
+# Facial Recognition Folder
+py main_video.py 
